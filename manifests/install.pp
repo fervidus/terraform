@@ -14,6 +14,9 @@ class terraform::install {
     checksum_type => 'sha256',
     creates       => '/usr/bin/terraform',
     cleanup       => true,
-    mode          => 'a+rx',
+  }
+
+  file { '/usr/bin':
+    mode => 'a+rx',
   }
 }
